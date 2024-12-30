@@ -1,3 +1,8 @@
 venv
 src/quickdraw_mlp_model.pkl
-data
+data/full_numpy_bitmap_airplane.npy
+data/full_numpy_bitmap_angel.npy
+data/full_numpy_bitmap_banana.npy
+data/full_numpy_bitmap_bowtie.npy
+data/full_numpy_bitmap_butterfly.npy
+data/full_numpy_bitmap_cactus.npy

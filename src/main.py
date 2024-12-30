@@ -16,9 +16,8 @@ canvas = np.zeros((480, 640, 3), dtype=np.uint8)
 
 webcam = cv2.VideoCapture(0)
 
-# model = pickle.load(open('./quickdraw_mlp_model.pkl', 'rb'))
 model = pickle.load(open('C:/Users/yenla/AppsByYen/QuickDraw/src/quickdraw_mlp_model.pkl', 'rb'))
-label_dict = {0: 'Angel', 1: 'Banana'}
+label_dict = {0: 'Airplane', 1: 'Angel', 2: 'Banana', 3: 'Bowtie', 4: 'Butterfly', 5: 'Cactus'}
 
 while True:
     sucess, frame = webcam.read()

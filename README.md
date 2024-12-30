@@ -14,7 +14,6 @@ I selected my preferred categories from the dataset and downloaded the correspon
 For training, I used a **Multi-Layer Perceptron (MLP)** model, implemented in the **./training** directory.
 
 ## Model Accuracy
-![Screenshot 2024-12-30 143443](https://github.com/user-attachments/assets/634d4480-c0ef-4371-923e-95ff5864fa02)
 
 ## Requirements
 - opencv-python

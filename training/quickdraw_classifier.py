@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import pickle
+import matplotlib.pyplot as plt
+
 
 # Load Data
 airplane_images = np.load('./data/full_numpy_bitmap_airplane.npy')
@@ -13,13 +15,13 @@ bowtie_images = np.load('./data/full_numpy_bitmap_bowtie.npy')
 butterfly_images = np.load('./data/full_numpy_bitmap_butterfly.npy')
 cactus_images = np.load('./data/full_numpy_bitmap_cactus.npy')
 
-# Limit each class to 1000 samples (6000 total)
-airplane_images = airplane_images[:1000]
-angel_images = angel_images[:1000]
-banana_images = banana_images[:1000]
-bowtie_images = bowtie_images[:1000]
-butterfly_images = butterfly_images[:1000]
-cactus_images = cactus_images[:1000]
+# Limit each class to 5000 samples (30000 total)
+airplane_images = airplane_images[:5000]
+angel_images = angel_images[:5000]
+banana_images = banana_images[:5000]
+bowtie_images = bowtie_images[:5000]
+butterfly_images = butterfly_images[:5000]
+cactus_images = cactus_images[:5000]
 
 # Concatenate the images into one dataset
 X = np.concatenate([airplane_images, angel_images, banana_images, bowtie_images, butterfly_images, cactus_images], axis=0)
@@ -52,6 +54,15 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy * 100:.2f}%')
 print(classification_report(y_test, y_pred, target_names=['airplane', 'angel', 'banana', 'bowtie', 'butterfly', 'cactus']))
+
+# Create bar plot
+accuracy_percent = accuracy * 100
+plt.figure(figsize=(6, 4))
+plt.bar(['Accuracy'], [accuracy_percent], color='blue')
+plt.ylim([0, 100])
+plt.ylabel('Accuracy (%)')
+plt.title('Model Accuracy')
+plt.show()
 
 save_dir = './src'
 model_path = os.path.join(save_dir, 'quickdraw_mlp_model.pkl')

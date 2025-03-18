@@ -1,4 +1,4 @@
-<h1 align="center">QuickDraw</h1>
+<h1 align="center">QuickDraw (pending)</h1>
 
 <div align="center">
 
